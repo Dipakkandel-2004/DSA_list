@@ -125,6 +125,24 @@ class linklist:
             count+=1
         curr.next=curr.next.next
         self.n-=1
+    ---------------------def find_maximum_and_replace(self,val):
+        curr=self.head
+        max=curr
+        while curr is not None:
+            if max.data<curr.data:
+                max=curr
+            curr=curr.next
+        print(max.data)
+        max.data=val
+    def sum_odd_nodes_value(self):
+        curr=self.head
+        sum=0
+        while curr is not None:
+            sum+=curr.data
+            if curr.next==None:
+                break
+            curr=curr.next.next
+        print(sum)
 l1=linklist()
 l1.insert_at_head(20)
 l1.insert_at_head(22)
