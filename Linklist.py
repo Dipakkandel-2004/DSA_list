@@ -125,7 +125,7 @@ class linklist:
             count+=1
         curr.next=curr.next.next
         self.n-=1
-    ---------------------def find_maximum_and_replace(self,val):
+    def find_maximum_and_replace(self,val):
         curr=self.head
         max=curr
         while curr is not None:
