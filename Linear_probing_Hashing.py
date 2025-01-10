@@ -12,7 +12,6 @@ class dict:
             self.data[hash_value]=value
         else:
             newhash=self.rehash(hash_value)
-
             while not self.slots[newhash]==None and self.slots[newhash]!=key:
                 newhash=self.rehash(newhash)
             if self.slots[newhash]==None:
@@ -42,10 +41,15 @@ class dict:
         return "NOT FOUND(none is found) "
     def __getitem__(self, item):
         return self.get(item)
-d1=dict(5)
-d1.put(5,3)
-d1.put(10,11)
-d1.put(15,11)
-d1.put(12,11)
-print(d1.slots)
-print(d1[182])
+    def __setitem__(self, key, value):
+        return self.put(key,value)
+    def __str__(self):
+        for i in range(len(self.slots)):
+            if self.slots[i] !=None:
+                print( self.slots[i],":",self.data[i],end="   ")
+        return ""
+d1=dict(4)
+d1["python"]=1000
+d1["java"]=500
+d1["javascript"]=2000
+print(d1)
