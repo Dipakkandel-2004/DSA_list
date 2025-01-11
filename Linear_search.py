@@ -4,4 +4,4 @@ def linear_search(list,quary):
         if list[i]==quary:
             print(i)
     return
-linear_search(list,52
+linear_search(list,52)
